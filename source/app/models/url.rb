@@ -7,7 +7,9 @@ class Url < ActiveRecord::Base
   private
 
     def generate_url_code
-      self.url_code = SecureRandom.hex[0...8]
+      if self.url_code.nil?
+        self.url_code = SecureRandom.hex[0...8]
+      end
     end
 
 end

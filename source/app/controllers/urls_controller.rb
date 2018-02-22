@@ -19,6 +19,9 @@ class UrlsController < ApplicationController
   def redirect
 
     url = Url.find_by url_code: params[:url_code]
+    url.increment(:click_count)
+    url.save
+
     redirect_to url.full_url
     
   end

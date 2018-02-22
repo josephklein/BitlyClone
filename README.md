@@ -45,3 +45,8 @@ Create one model, `User` to handle both regular users and at least one administr
 - [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project)
 - [Active Record Callbacks](http://guides.rubyonrails.org/active_record_callbacks.html)
 - [Rails Routing](http://guides.rubyonrails.org/routing.html)
+
+## Notes
+I'm noticing some interesting behavior that's messing up the click counter
+- Chrome seems to "preload" pages as I type the URL.  It runs in the background and hits the URL before I actually visit
+- When I click a link within the page, it increments twice.  I think the culprit is Turbolinks, but not sure how or why or if I can disable it. Right-click open in new tab works fine
