@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+urls = Url.create([{url_code: 'ebd26da8', full_url: 'http://www.google.com'}])
