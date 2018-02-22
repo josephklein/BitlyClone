@@ -1,5 +1,16 @@
 <h1>Shorten New URL</h1>
-<%= form_tag("/urls", method: "post") do %>
-    <%= text_field_tag(:full_url, nil, size: 50, placeholder: 'Enter URL here') %><br>
-    <%= submit_tag("Shorten") %>
+<%= form_for @url, action: "create" do |f| %>
+    <%= f.text_field(:full_url) %>
+    <%= f.submit("Shorten") %>
+    <% if @url.errors.any? %>
+      <br><br>
+      <div>
+        <span>Invalid URL:</span>
+        <ul>
+          <% @url.errors[:full_url].each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 <% end %>

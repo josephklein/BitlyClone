@@ -5,14 +5,23 @@ class UrlsController < ApplicationController
   end
 
   def new
+
+    @url = Url.new
   end
 
   def create
     
-    @url = Url.new(params.permit(:full_url))
-
+    @url = Url.new(params.require(:url).permit(:full_url))
     @url.save
-    redirect_to urls_url
+
+    if @url.errors.any?
+      Rails.logger.info "Has errors: #{@url.errors.messages}"
+      render 'urls/new'
+    else
+      Rails.logger.info "No errors!"
+      redirect_to urls_url
+      return
+    end
 
   end
 

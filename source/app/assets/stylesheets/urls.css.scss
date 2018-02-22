@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html {
-  text-align: center;
 }
 
 table, th, td {
@@ -12,9 +11,14 @@ table, th, td {
 
 table {
   border-collapse: collapse;
-  margin: auto;
 }
+
 
 td {
   padding: 5px;
+}
+
+ul {
+  display:table;
+  text-align: left;
 }
