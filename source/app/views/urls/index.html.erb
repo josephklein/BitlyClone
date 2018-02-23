@@ -1,17 +1,17 @@
 <h1>URL List</h1>
  
-<table>
+<table class="table_list">
   <tr>
-    <th>Short URL</th>
-    <th>Full URL</th>
-    <th>Click Count</th>
+    <th class="table_list">Short URL</th>
+    <th class="table_list">Full URL</th>
+    <th class="table_list">Click Count</th>
   </tr>
  
   <% @urls.each do |url| %>
     <tr>
-      <td><a href="http://localhost:3000/urls/<%= url.url_code %>">http://localhost:3000/urls/<%= url.url_code %></a></td>
-      <td><a href="<%= url.full_url %>"><%= url.full_url %></a></td>
-      <td><%= url.click_count %></td>
+      <td class="table_list"><a href="http://localhost:3000/urls/<%= url.url_code %>">http://localhost:3000/urls/<%= url.url_code %></a></td>
+      <td class="table_list"><a href="<%= url.full_url %>"><%= url.full_url %></a></td>
+      <td class="table_list"><%= url.click_count %></td>
     </tr>
   <% end %>
 
