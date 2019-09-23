@@ -1,0 +1,15 @@
+<h1>Shorten New URL</h1>
+<%= form_for @url, action: "create" do |f| %>
+    <%= f.text_field(:full_url) %><br/>
+    <% if @url.errors.any? %>
+      <div class="validation_errors">
+        <span>Invalid URL:</span>
+        <ul class="validation_error_list">
+          <% @url.errors[:full_url].each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= f.submit("Shorten") %>
+<% end %>
